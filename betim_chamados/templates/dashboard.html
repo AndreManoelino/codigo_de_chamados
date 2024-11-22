@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Dashboard de Chamados</h1>
+    <form method="POST" action="{{ url_for('abrir_chamado') }}" enctype="multipart/form-data">
+        <input type="text" name="nome" placeholder="Nome" required>
+        <input type="text" name="departamento" placeholder="Departamento" required>
+        <input type="text" name="guiche" placeholder="Guichê" required>
+        <textarea name="descricao" placeholder="Descrição"></textarea>
+        <button type="submit">Abrir Chamado</button>
+    </form>
+
+    <h2>Chamados Abertos</h2>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Departamento</th>
+            <th>Guichê</th>
+            <th>Descrição</th>
+            <th>Data e Hora</th>
+            <th>Status</th>
+            <th>Ações</th>
+        </tr>
+        {% for chamado in chamados %}
+        <tr>
+            <td>{{ chamado.id }}</td>
+            <td>{{ chamado.nome }}</td>
+            <td>{{ chamado.departamento }}</td>
+            <td>{{ chamado.guiche }}</td>
+            <td>{{ chamado.descricao }}</td>
+            <td>{{ chamado.data_hora }}</td>
+            <td>{{ chamado.status }}</td>
+            <td>
+                {% if chamado.status == 'Aberto' %}
+                    <a href="{{ url_for('fechar_chamado', id=chamado.id) }}">Fechar Chamado</a>
+                    <a href="{{ url_for('excluir_chamado', id=chamado.id) }}" class="btn btn-danger">Excluir</a>
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

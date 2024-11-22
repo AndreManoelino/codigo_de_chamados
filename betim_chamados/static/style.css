@@ -1,0 +1,149 @@
+/* Estilos Globais */
+body {
+    background-image: url('setembro.jpg'); /* Ajuste o caminho conforme necessário */
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+.container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 8px;
+    width: 80%;
+    max-width: 500px; /* Para telas pequenas */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+/* Títulos */
+h1, h2 {
+    margin-top: 0;
+    color: #333;
+}
+
+/* Formulários */
+.form-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input[type="text"], input[type="password"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Botões */
+button {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 4px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Navegação */
+.nav-buttons {
+    margin-top: 15px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-buttons a {
+    display: block;
+    padding: 12px;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 14px;
+    text-decoration: none;
+    width: 48%;
+    text-align: center;
+}
+
+.nav-buttons a:hover {
+    background-color: #0056b3;
+}
+
+/* Estilos Específicos para Páginas */
+.dashboard-container, .inventario-container, .quantitativo-container, .base-container {
+    max-width: 800px; /* Largura maior para páginas de conteúdo */
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+.table th, .table td {
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;
+}
+
+.table th {
+    background-color: #f2f2f2;
+}
+
+/* Estilos de Gráficos */
+.chart {
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+.chart-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+    .nav-buttons {
+        flex-direction: column;
+    }
+
+    .nav-buttons a {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}
+
+body {
+    background-color: #f8f9fa; /* Cor de fundo suave */
+}
+
+.table {
+    margin-top: 20px; /* Margem superior para a tabela */
+}
+
+h1 {
+    margin-top: 20px; /* Margem superior para o título */
+}
+
+.btn {
+    margin-right: 10px; /* Espaçamento entre botões */
+}

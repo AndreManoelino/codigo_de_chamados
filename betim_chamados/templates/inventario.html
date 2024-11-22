@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <h1>Inventário Restrito</h1>
+    <a href="{{ url_for('quantitativo') }}" class="btn btn-primary mb-3">Adicionar Quantitativo</a>
+    <form method="POST" action="{{ url_for('adicionar_item') }}">
+        <input type="text" name="departamento" placeholder="Departamento" required>
+        <input type="text" name="hostname" placeholder="Hostname" required>
+        <input type="text" name="ip_rede" placeholder="IP de Rede" required>
+        <input type="text" name="anydesk" placeholder="Anydesk" required>
+        <input type="text" name="senha_anydesk" placeholder="Senha Anydesk" required>
+        <input type="text" name="ip_impressora" placeholder="IP Impressora" required>
+        <input type="text" name="modelo_impressora" placeholder="Modelo Impressora" required>
+        <input type="text" name="numero_serie_desktop" placeholder="Número de Série Desktop" required>
+        <input type="text" name="fila_impressao" placeholder="Fila de Impressão" required>
+        <input type="text" name="atendente" placeholder="Atendente" required>
+        <input type="text" name="pontos_em_uso" placeholder="Pontos em Uso" required>
+        <input type="text" name="pontos_reserva" placeholder="Pontos Reserva" required>
+        <input type="text" name="switch" placeholder="Switch" required>
+        <input type="text" name="porta_switch" placeholder="Porta Switch" required>
+        <button type="submit">Adicionar Item</button>
+    </form>
+
+    <h2>Lista de Itens no Inventário</h2>
+    <table>
+        <tr>
+            <th>Departamento</th>
+            <th>Hostname</th>
+            <th>IP de Rede</th>
+            <th>Anydesk</th>
+            <th>Senha Anydesk</th>
+            <th>IP Impressora</th>
+            <th>Modelo Impressora</th>
+            <th>Número de Série Desktop</th>
+            <th>Fila de Impressão</th>
+            <th>Atendente</th>
+            <th>Pontos em Uso</th>
+            <th>Pontos Reserva</th>
+            <th>Switch</th>
+            <th>Porta Switch</th>
+            <th>Data e Hora</th>
+            <th>Ações</th>
+        </tr>
+        {% for item in inventario %}
+        <tr>
+            <td>{{ item.departamento }}</td>
+            <td>{{ item.hostname }}</td>
+            <td>{{ item.ip_rede }}</td>
+            <td>{{ item.anydesk }}</td>
+            <td>{{ item.senha_anydesk }}</td>
+            <td>{{ item.ip_impressora }}</td>
+            <td>{{ item.modelo_impressora }}</td>
+            <td>{{ item.numero_serie_desktop }}</td>
+            <td>{{ item.fila_impressao }}</td>
+            <td>{{ item.atendente }}</td>
+            <td>{{ item.pontos_em_uso }}</td>
+            <td>{{ item.pontos_reserva }}</td>
+            <td>{{ item.switch }}</td>
+            <td>{{ item.porta_switch }}</td>
+            <td>{{ item.data_hora }}</td> <!-- Certifique-se de que a propriedade existe -->
+            <td>
+                <a href="{{ url_for('excluir_item', id=item.id) }}" onclick="return confirm('Tem certeza que deseja apagar este item?');">Apagar</a>
+                <a href="{{ url_for('quantitativo') }}">Acessar Inventário Quantitativo</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+    <a href="{{ url_for('logout') }}">Sair</a>
+</div>
+{% endblock %}

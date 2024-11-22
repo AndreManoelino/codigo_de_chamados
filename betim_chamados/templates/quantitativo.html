@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <title>Inventário Quantitativo</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="mt-4">Inventário Quantitativo</h1>
+        <button type="button" class="btn btn-primary mb-4">Abrir Chamado</button>
+
+        <!-- Formulário para adicionar novo item quantitativo -->
+        <form action="{{ url_for('adicionar_quantitativo') }}" method="post" class="mb-4">
+            <h2>Adicionar Novo Item Quantitativo</h2>
+
+            <div class="form-group">
+                <label for="monitor_quantidade">Monitor Quantidade:</label>
+                <input type="number" id="monitor_quantidade" name="monitor_quantidade" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="modelo_monitor">Modelo Monitor:</label>
+                <input type="text" id="modelo_monitor" name="modelo_monitor" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="cabos_quantidade">Cabos Quantidade:</label>
+                <input type="number" id="cabos_quantidade" name="cabos_quantidade" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="modelo_cabo">Modelo Cabo:</label>
+                <input type="text" id="modelo_cabo" name="modelo_cabo" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="mouse_quantidade">Mouse Quantidade:</label>
+                <input type="number" id="mouse_quantidade" name="mouse_quantidade" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="modelo_mouse">Modelo Mouse:</label>
+                <input type="text" id="modelo_mouse" name="modelo_mouse" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="teclado_quantidade">Teclado Quantidade:</label>
+                <input type="number" id="teclado_quantidade" name="teclado_quantidade" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="modelo_teclado">Modelo Teclado:</label>
+                <input type="text" id="modelo_teclado" name="modelo_teclado" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="desktop_quantidade">Desktop Quantidade:</label>
+                <input type="number" id="desktop_quantidade" name="desktop_quantidade" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="modelo_desktop">Modelo Desktop:</label>
+                <input type="text" id="modelo_desktop" name="modelo_desktop" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="telefone_quantidade">Telefone Quantidade:</label>
+                <input type="number" id="telefone_quantidade" name="telefone_quantidade" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="modelo_telefone">Modelo Telefone:</label>
+                <input type="text" id="modelo_telefone" name="modelo_telefone" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="fone_quantidade">Fone Quantidade:</label>
+                <input type="number" id="fone_quantidade" name="fone_quantidade" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="modelo_fone">Modelo Fone:</label>
+                <input type="text" id="modelo_fone" name="modelo_fone" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="extensao_quantidade">Extensão Quantidade:</label>
+                <input type="number" id="extensao_quantidade" name="extensao_quantidade" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="modelo_extensao">Modelo Extensão:</label>
+                <input type="text" id="modelo_extensao" name="modelo_extensao" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="tablet_quantidade">Tablet Quantidade:</label>
+                <input type="number" id="tablet_quantidade" name="tablet_quantidade" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="modelo_tablet">Modelo Tablet:</label>
+                <input type="text" id="modelo_tablet" name="modelo_tablet" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="pendrive_quantidade">Pendrive Quantidade:</label>
+                <input type="number" id="pendrive_quantidade" name="pendrive_quantidade" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="modelo_pendrive">Modelo Pendrive:</label>
+                <input type="text" id="modelo_pendrive" name="modelo_pendrive" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="flashbio_quantidade">Flashbio Quantidade:</label>
+                <input type="number" id="flashbio_quantidade" name="flashbio_quantidade" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="modelo_flashbio">Modelo Flashbio:</label>
+                <input type="text" id="modelo_flashbio" name="modelo_flashbio" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="pad_quantidade">Pad Quantidade:</label>
+                <input type="number" id="pad_quantidade" name="pad_quantidade" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="modelo_pad">Modelo Pad:</label>
+                <input type="text" id="modelo_pad" name="modelo_pad" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="leitor_quantidade">Leitor Quantidade:</label>
+                <input type="number" id="leitor_quantidade" name="leitor_quantidade" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="modelo_leitor">Modelo Leitor:</label>
+                <input type="text" id="modelo_leitor" name="modelo_leitor" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="data_insercao">Data de Inserção:</label>
+                <input type="date" id="data_insercao" name="data_insercao" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="data_modificacao">Data de Modificação:</label>
+                <input type="date" id="data_modificacao" name="data_modificacao" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-success">Adicionar Item</button>
+        </form>
+
+        <!-- Tabela para exibir os itens quantitativos -->
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Item</th>
+                    <th>Monitor Quantidade</th>
+                    <th>Modelo Monitor</th>
+                    <th>Cabos Quantidade</th>
+                    <th>Modelo Cabo</th>
+                    <th>Mouse Quantidade</th>
+                    <th>Modelo Mouse</th>
+                    <th>Teclado Quantidade</th>
+                    <th>Modelo Teclado</th>
+                    <th>Desktop Quantidade</th>
+                    <th>Modelo Desktop</th>
+                    <th>Telefone Quantidade</th>
+                    <th>Modelo Telefone</th>
+                    <th>Fone Quantidade</th>
+                    <th>Modelo Fone</th>
+                    <th>Extensão Quantidade</th>
+                    <th>Modelo Extensão</th>
+                    <th>Tablet Quantidade</th>
+                    <th>Modelo Tablet</th>
+                    <th>Pendrive Quantidade</th>
+                    <th>Modelo Pendrive</th>
+                    <th>Flashbio Quantidade</th>
+                    <th>Modelo Flashbio</th>
+                    <th>Pad Quantidade</th>
+                    <th>Modelo Pad</th>
+                    <th>Leitor Quantidade</th>
+                    <th>Modelo Leitor</th>
+                    <th>Data de Inserção</th>
+                    <th>Data de Modificação</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for item in itens_quantitativos %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>{{ item.monitor_quantidade }}</td>
+                    <td>{{ item.modelo_monitor }}</td>
+                    <td>{{ item.cabos_quantidade }}</td>
+                    <td>{{ item.modelo_cabo }}</td>
+                    <td>{{ item.mouse_quantidade }}</td>
+                    <td>{{ item.modelo_mouse }}</td>
+                    <td>{{ item.teclado_quantidade }}</td>
+                    <td>{{ item.modelo_teclado }}</td>
+                    <td>{{ item.desktop_quantidade }}</td>
+                    <td>{{ item.modelo_desktop }}</td>
+                    <td>{{ item.telefone_quantidade }}</td>
+                    <td>{{ item.modelo_telefone }}</td>
+                    <td>{{ item.fone_quantidade }}</td>
+                    <td>{{ item.modelo_fone }}</td>
+                    <td>{{ item.extensao_quantidade }}</td>
+                    <td>{{ item.modelo_extensao }}</td>
+                    <td>{{ item.tablet_quantidade }}</td>
+                    <td>{{ item.modelo_tablet }}</td>
+                    <td>{{ item.pendrive_quantidade }}</td>
+                    <td>{{ item.modelo_pendrive }}</td>
+                    <td>{{ item.flashbio_quantidade }}</td>
+                    <td>{{ item.modelo_flashbio }}</td>
+                    <td>{{ item.pad_quantidade }}</td>
+                    <td>{{ item.modelo_pad }}</td>
+                    <td>{{ item.leitor_quantidade }}</td>
+                    <td>{{ item.modelo_leitor }}</td>
+                    <td>{{ item.data_insercao }}</td>
+                    <td>{{ item.data_modificacao }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>
