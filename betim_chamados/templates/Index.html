@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+
+<html lang="pt-br">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Betim Chamados - Abrir Chamado</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <style>
+
+        body {
+
+            background-image: url('{{ url_for('static', filename='setembro.jpg') }}');
+
+            background-size: cover;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            height: 100vh;
+
+            margin: 0;
+
+            font-family: Arial, sans-serif;
+
+            color: #333;
+
+        }
+
+        .container {
+
+            background-color: rgba(255, 255, 255, 0.9);
+
+            padding: 20px;
+
+            border-radius: 8px;
+
+            width: 80%;
+
+            max-width: 500px;
+
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+
+            text-align: center;
+
+        }
+
+        h1, h2 {
+
+            margin-top: 0;
+
+            color: #333;
+
+        }
+
+        .form-group {
+
+            margin-bottom: 15px;
+
+            text-align: left;
+
+        }
+
+        label {
+
+            display: block;
+
+            font-weight: bold;
+
+        }
+
+        input[type="text"], textarea {
+
+            width: 100%;
+
+            padding: 10px;
+
+            margin-top: 5px;
+
+            border-radius: 4px;
+
+            border: 1px solid #ccc;
+
+            font-size: 16px;
+
+            box-sizing: border-box;
+
+        }
+
+        button {
+
+            width: 100%;
+
+            padding: 12px;
+
+            border: none;
+
+            border-radius: 4px;
+
+            background-color: #4CAF50;
+
+            color: white;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            margin-top: 10px;
+
+        }
+
+        button:hover {
+
+            background-color: #45a049;
+
+        }
+
+        .nav-buttons {
+
+            margin-top: 15px;
+
+            display: flex;
+
+            flex-direction: column; /* Altera para coluna */
+
+            align-items: center; /* Centraliza os botões */
+
+        }
+
+        .nav-buttons a {
+
+            display: block;
+
+            padding: 12px;
+
+            border-radius: 4px;
+
+            background-color: #007bff;
+
+            color: white;
+
+            font-size: 14px;
+
+            text-decoration: none;
+
+            width: 10%; /* Largura total */
+
+            margin-bottom: 10%%; /* Espaçamento entre botões */
+
+            text-align: center;
+
+        }
+
+        .nav-buttons a:hover {
+
+            background-color: #0056b3;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Betim Chamados</h1>
+
+        <h2>Abrir um novo chamado</h2>
+
+        <form action="{{ url_for('abrir_chamado') }}" method="POST">
+
+            <div class="form-group">
+
+                <label for="nome">Nome:</label>
+
+                <input type="text" id="nome" name="nome" required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="departamento">Departamento:</label>
+
+                <input type="text" id="departamento" name="departamento" required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="guiche">Guichê:</label>
+
+                <input type="text" id="guiche" name="guiche" required>
+
+            </div>
+
+            <div class="form-group">
+
+                <label for="descricao">Descrição:</label>
+
+                <textarea id="descricao" name="descricao" rows="4" required></textarea>
+
+            </div>
+
+            <button type="submit">Abrir Chamado</button>
+
+        </form>
+
+        <div class="nav-buttons">
+
+            <a href="{{ url_for('dashboard') }}">Ver Chamados</a>
+
+            <a href="{{ url_for('inventario') }}">Ir para Inventário</a>
+
+            <a href="{{ url_for('quantitativo') }}">Acessar Inventário Quantitativo</a> <!-- Aqui está o botão para o quantitativo -->
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>
